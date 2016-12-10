@@ -3,15 +3,19 @@ package hitpic;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-/**
- * Created by tonisala on 10.12.2016.
- */
 @SpringBootApplication
 @ComponentScan
 public class HitPicApplication {
 
     public static void main(String[] args) {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+//        context.getEnvironment().setActiveProfiles(System.getenv("PROFILE"));
+        if (System.getenv("SPRING_PROFILES_ACTIVE") != null) {
+            context.getEnvironment().setActiveProfiles(System.getenv("SPRING_PROFILES_ACTIVE"));
+        }
         SpringApplication.run(HitPicApplication.class, args);
     }
 }
