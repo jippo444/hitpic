@@ -1,0 +1,7 @@
+nav a,
+nav form {
+    display: inline;
+}
+.logout{
+    float: right;
+}

@@ -24,6 +24,7 @@ public class ProductionSecurityConfiguration extends WebSecurityConfigurerAdapte
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                .antMatchers("/admin").hasAnyAuthority("ADMIN")
                 .anyRequest().authenticated();
         http.formLogin()
                 .permitAll()

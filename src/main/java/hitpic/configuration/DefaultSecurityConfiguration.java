@@ -23,12 +23,15 @@ public class DefaultSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        // sallitaan h2-konsolin käyttö
+//         sallitaan h2-konsolin käyttö
         http.csrf().disable();
         http.headers().frameOptions().sameOrigin();
 
-        http.authorizeRequests()
+        http.
+                authorizeRequests()
                 .antMatchers("/h2-console/*").permitAll()
+                .antMatchers("/index").permitAll()
+                .antMatchers("/admin").hasAnyAuthority("ADMIN", "USER")
                 .anyRequest().authenticated();
         http.formLogin()
                 .permitAll()
@@ -39,8 +42,8 @@ public class DefaultSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
-        auth.inMemoryAuthentication()
-                .withUser("jack").password("bauer").roles("USER");
+//        auth.inMemoryAuthentication()
+//                .withUser("jack").password("bauer").roles("USER");
     }
 
     @Bean

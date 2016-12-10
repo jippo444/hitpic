@@ -1,6 +1,9 @@
 package hitpic.service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -22,6 +25,15 @@ public class CustomUserDetailsService implements UserDetailsService {
         if (account == null) {
             throw new UsernameNotFoundException("No such user: " + username);
         }
+        List<SimpleGrantedAuthority> grantedAuthorityList = new ArrayList<>();
+        for (String authority : account.getAuthorities()) {
+            grantedAuthorityList.add(new SimpleGrantedAuthority(authority));
+            System.out.println("Granting user " + account.getUsername() + " authority: " + authority);
+        }
+        System.out.println("Granted authorities: ");
+        for (SimpleGrantedAuthority ga: grantedAuthorityList) {
+            System.out.println(ga.getAuthority());
+        }
 
         return new org.springframework.security.core.userdetails.User(
                 account.getUsername(),
@@ -30,6 +42,6 @@ public class CustomUserDetailsService implements UserDetailsService {
                 true,
                 true,
                 true,
-                Arrays.asList(new SimpleGrantedAuthority("USER")));
+                grantedAuthorityList);
     }
 }
