@@ -42,7 +42,7 @@ public class DefaultController {
             Account user2 = new Account();
             user2.setUsername("maxwell");
             user2.setPassword(passwordEncoder.encode("smart"));
-            user.setAuthorities(Arrays.asList("USER"));
+            user2.setAuthorities(Arrays.asList("USER"));
             user2 = userDetailsRepository.save(user2);
         } else {
             Account user = new Account();
