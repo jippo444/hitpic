@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="92282029-e0ba-4a1b-b82f-510e17903bad" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hitpic/configuration/ProductionSecurityConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/hitpic/configuration/ProductionSecurityConfiguration.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/hitpic/controller/DefaultController.java" afterPath="$PROJECT_DIR$/src/main/java/hitpic/controller/DefaultController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -985,7 +983,7 @@
       <option name="presentableId" value="Default" />
       <updated>1481365214758</updated>
       <workItem from="1481365220022" duration="968000" />
-      <workItem from="1481366277586" duration="19423000" />
+      <workItem from="1481366277586" duration="19441000" />
     </task>
     <task id="LOCAL-00001" summary="Websecurity käyttöön, luotu myös pakkaukset repository, configuration ja service sekä luokat Account, Accountrepository, SecurityConfiguration ja CustomUserDetailsservice">
       <created>1481372060767</created>
@@ -1008,11 +1006,18 @@
       <option name="project" value="LOCAL" />
       <updated>1481392382502</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Admin-oikeudet, adminille mahdollisuus katsoa rekisteröityneet käyttäjät">
+      <created>1481392806381</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1481392806381</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20391000" />
+    <option name="totallyTimeSpent" value="20409000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="21" width="1366" height="743" extended-state="0" />
